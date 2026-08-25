@@ -78,6 +78,13 @@ frontend/dist/
 *.exe
 *.AppImage
 
+# Runtime data
+data/
+*.db
+
+# Claude Code
+.claude/
+
 # Temporary files
 *.tmp
 *.temp

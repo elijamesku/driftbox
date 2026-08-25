@@ -116,7 +116,7 @@ def crawl_learning_portal_tutorials(tutorial_urls: List[str], enable_verbose_log
         try:
             extracted_tutorial_data = _extract_tutorial_content(tutorial_url)
             if enable_verbose_logging:
-                print(f"[SUCCESS] {tutorial_url} → {len(extracted_tutorial_data.get("chunks") or [])} content chunks")
+                print(f"[SUCCESS] {tutorial_url} → {len(extracted_tutorial_data.get('chunks') or [])} content chunks")
             crawled_tutorials.append(extracted_tutorial_data)
         except Exception:
             if enable_verbose_logging:

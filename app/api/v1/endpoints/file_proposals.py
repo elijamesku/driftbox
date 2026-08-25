@@ -2,6 +2,7 @@
 File Proposals API - Handle file change proposals from agent mode.
 Allows users to approve/reject proposed file changes (Cursor-style).
 """
+from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 from typing import List
