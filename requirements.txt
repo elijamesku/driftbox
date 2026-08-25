@@ -30,8 +30,8 @@ beautifulsoup4
 numpy
 faiss-cpu
 
-# Model Context Protocol
-mcp>=0.9.0
+# Model Context Protocol (requires Python 3.10+, optional)
+# mcp>=0.9.0
 
 # Git operations
 GitPython
@@ -48,6 +48,9 @@ stripe
 
 # Email
 sendgrid
+
+# Python 3.9 compatibility
+eval_type_backport
 
 # Dev / utilities
 pytest
