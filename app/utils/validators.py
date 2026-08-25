@@ -1,0 +1,8 @@
+from jsonschema import Draft202012Validator
+from app.utils.schemas import INFRASTRUCTURE_REPRESENTATION_SCHEMA
+from app.utils.schemas import EDIT_SPECIFICATION_SCHEMA
+
+# JSON Schema validators for request payloads
+INFRASTRUCTURE_SCHEMA_VALIDATOR = Draft202012Validator(INFRASTRUCTURE_REPRESENTATION_SCHEMA)
+
+EDIT_SCHEMA_VALIDATOR = Draft202012Validator(EDIT_SPECIFICATION_SCHEMA) 

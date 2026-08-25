@@ -1,0 +1,142 @@
+================================================================================
+DASHBOARD USER DOCUMENTATION — Copy for Framer / Website
+================================================================================
+
+Use this text when writing user docs on your Framer site. Adjust tone and length as needed.
+
+--------------------------------------------------------------------------------
+OVERVIEW
+--------------------------------------------------------------------------------
+
+The dashboard is a policy-driven infrastructure control plane. It gives you continuous governance across your cloud lifecycle: see drift, policy compliance, change risk, cost, and audit in one place.
+
+Main areas:
+- Overview (home): high-level health, control plane status, lifecycle governance, DigitalOcean (if connected), drift, policy, risk, cost, and recent activity.
+- IDE: in-browser workspace to work with repos and AI assistance.
+- Changes: track and manage infrastructure changes.
+- Policies: view and manage policy rules and compliance.
+- Governance: governance and compliance status.
+- Sandbox: safe environment to test changes.
+- Audit Logs: full history of actions and events.
+- Cost: infrastructure cost tracking and trends.
+- Teams: organize people and collaborate on projects.
+- Repos: connected repositories.
+- Settings: account, integrations (e.g. GitHub, DigitalOcean), and preferences.
+
+--------------------------------------------------------------------------------
+GETTING STARTED
+--------------------------------------------------------------------------------
+
+- Sign in with your account (GitHub or email, depending on your setup).
+- In Settings, connect GitHub and optionally DigitalOcean to sync repos and infrastructure.
+- The main dashboard (Overview) shows a summary once connected; use the sidebar to open specific sections.
+
+--------------------------------------------------------------------------------
+OVERVIEW (HOME)
+--------------------------------------------------------------------------------
+
+The Overview page shows:
+
+- Top stats: Managed Resources, Active Drift, Policy Violations, Est. Monthly Cost.
+- Top Issues: cards for issue types (e.g. Security Misconfigurations, Infrastructure Drift, Cost Anomalies, Policy Violations) with open/total counts and trend.
+- Control Plane Architecture: status of layers (Audit & Evidence, Runtime Drift Detection, Risk Assessment, State Reasoning, Policy Evaluation, Terraform Interaction).
+- Lifecycle Governance: Pre-Deployment, Deployment, Post-Deployment pass rates and recent checks.
+- DigitalOcean (if connected): resource inventory, cost breakdown, health, live resource status; Sync refreshes data.
+- Infrastructure Drift Detection: chart of detected vs resolved drift; list of recent drift items (resource, field, expected vs actual, severity).
+- Policy Compliance: compliance by category (e.g. Security, Cost, Network); recent violations with rule, resource, severity.
+- Change Risk Assessment: risk distribution (Low/Medium/High/Critical); pending changes with blast radius and approval status.
+- Infrastructure Cost: cost trend over time vs budget; current cost and change vs last period.
+- Audit Trail: recent activity (who did what, when).
+- Quick stats footer: Connected Repos, Active Teams, Sandbox Pass Rate, Avg. Resolution Time.
+
+Clicking items (e.g. drift, policy violations, pending changes) opens a detail panel with actions (e.g. Reconcile, Approve, Reject). Use the Refresh button to reload data.
+
+--------------------------------------------------------------------------------
+IDE
+--------------------------------------------------------------------------------
+
+The IDE is an in-browser workspace. Use it to:
+
+- Browse and edit files from connected repositories.
+- Use AI-assisted chat for code and infrastructure questions.
+- Stage and commit changes (staging panel).
+- Work with Terraform and other repo content.
+
+Access it from the sidebar: IDE. The top bar may show chat/open controls depending on the view.
+
+--------------------------------------------------------------------------------
+CHANGES
+--------------------------------------------------------------------------------
+
+The Changes section is for tracking infrastructure changes (e.g. pull requests, plan/apply). Use it to see what’s in flight, what’s approved, and what’s deployed. Exact workflows depend on your GitHub/integration setup.
+
+--------------------------------------------------------------------------------
+POLICIES
+--------------------------------------------------------------------------------
+
+Policies define rules (security, cost, network, identity, data, etc.). The Policies page lets you:
+
+- View active policies and their scope.
+- See compliance status and violations.
+- Remediate or suppress violations (from Overview detail panels or from the Policies page if available).
+
+Violations show rule name, affected resource, severity, category, and suggested remediation.
+
+--------------------------------------------------------------------------------
+GOVERNANCE
+--------------------------------------------------------------------------------
+
+Governance & Compliance shows how well your infrastructure meets policy across the lifecycle (pre-deploy, deploy, post-deploy). You see pass rates, failed checks, and where to take action. Overview’s Lifecycle Governance panel is a short summary; the Governance page is the full view.
+
+--------------------------------------------------------------------------------
+SANDBOX
+--------------------------------------------------------------------------------
+
+The Sandbox is a safe environment to run plans, tests, or experiments without affecting production. Use it to validate Terraform or policy changes before applying them. Overview may show a Sandbox Pass Rate; the Sandbox page is where you run and inspect those runs.
+
+--------------------------------------------------------------------------------
+AUDIT LOGS
+--------------------------------------------------------------------------------
+
+Audit Logs give a full history of actions: who did what, when, and on which resource or change. Use it for compliance, debugging, and review. The Overview’s Audit Trail shows recent activity; the Audit Logs page shows the full log (with filters if implemented).
+
+--------------------------------------------------------------------------------
+COST
+--------------------------------------------------------------------------------
+
+Cost shows infrastructure cost over time and vs budget. You see estimated monthly cost, trend (e.g. last 6 months), and breakdown by resource type when DigitalOcean (or other providers) are connected. Use it to track spend and stay within budget.
+
+--------------------------------------------------------------------------------
+TEAMS
+--------------------------------------------------------------------------------
+
+Teams let you organize people and collaborate on infrastructure projects. You can create teams, invite members, and scope work (repos, policies, etc.) per team. Team pages may include a wiki/docs area for that team’s repos.
+
+--------------------------------------------------------------------------------
+REPOS
+--------------------------------------------------------------------------------
+
+Repos lists your connected repositories (e.g. from GitHub). From here you manage which repos are linked, view status, and open them in the IDE or team context.
+
+--------------------------------------------------------------------------------
+SETTINGS
+--------------------------------------------------------------------------------
+
+Settings covers:
+
+- Account: profile, email, GitHub username.
+- Integrations: connect or disconnect GitHub, DigitalOcean, etc. Connecting DigitalOcean enables the Overview’s DigitalOcean panel, cost data, and sync.
+- Other preferences (theme, notifications, etc.) if available.
+
+--------------------------------------------------------------------------------
+QUICK REFERENCE
+--------------------------------------------------------------------------------
+
+- Refresh (Overview): reloads dashboard and integration data.
+- Sync (DigitalOcean panel): refreshes DO resource and cost data.
+- Detail panels: click drift items, policy violations, or pending changes on Overview to open actions (Reconcile, Approve, Reject, etc.).
+- Sidebar: Dashboard (Overview), IDE, Changes, Policies, Governance, Sandbox, Audit Logs, Cost, Teams, Repos, Settings. Search and Documentation (if you add an in-app docs link) are also in the sidebar.
+
+================================================================================
+End of user documentation text. Copy sections into your Framer site as needed.
+================================================================================

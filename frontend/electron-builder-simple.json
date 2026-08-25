@@ -1,0 +1,27 @@
+{
+  "appId": "com.driftbox.desktop",
+  "productName": "Driftbox",
+  "directories": {
+    "output": "dist"
+  },
+  "files": [
+    "out/**/*",
+    "electron/**/*",
+    {
+      "from": "package-production.json",
+      "to": "package.json"
+    }
+  ],
+  "asarUnpack": [],
+  "asar": true,
+  "npmRebuild": false,
+  "nodeGypRebuild": false,
+  "buildDependenciesFromSource": false,
+  "mac": {
+    "target": {
+      "target": "dir",
+      "arch": ["x64"]
+    }
+  }
+}
+

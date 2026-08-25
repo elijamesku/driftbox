@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: infrara-prod
+  labels:
+    name: infrara-prod
+    environment: production
+

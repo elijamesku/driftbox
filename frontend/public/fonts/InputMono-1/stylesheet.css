@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Black.woff2') format('woff2'),
+        url('InputMono-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Bold.woff2') format('woff2'),
+        url('InputMono-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-BlackItalic.woff2') format('woff2'),
+        url('InputMono-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-BoldItalic.woff2') format('woff2'),
+        url('InputMono-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono ExLight';
+    src: url('InputMono-ExtraLight.woff2') format('woff2'),
+        url('InputMono-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono ExLight';
+    src: url('InputMono-ExtraLightItalic.woff2') format('woff2'),
+        url('InputMono-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Italic.woff2') format('woff2'),
+        url('InputMono-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Light.woff2') format('woff2'),
+        url('InputMono-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-LightItalic.woff2') format('woff2'),
+        url('InputMono-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Medium.woff2') format('woff2'),
+        url('InputMono-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-MediumItalic.woff2') format('woff2'),
+        url('InputMono-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Regular.woff2') format('woff2'),
+        url('InputMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-Thin.woff2') format('woff2'),
+        url('InputMono-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMono';
+    src: url('InputMono-ThinItalic.woff2') format('woff2'),
+        url('InputMono-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Medium.woff2') format('woff2'),
+        url('InputMonoCompressed-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-MediumItalic.woff2') format('woff2'),
+        url('InputMonoCompressed-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Regular.woff2') format('woff2'),
+        url('InputMonoCompressed-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Thin.woff2') format('woff2'),
+        url('InputMonoCompressed-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-ThinItalic.woff2') format('woff2'),
+        url('InputMonoCompressed-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Black.woff2') format('woff2'),
+        url('InputMonoCompressed-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-BlackItalic.woff2') format('woff2'),
+        url('InputMonoCompressed-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-BoldItalic.woff2') format('woff2'),
+        url('InputMonoCompressed-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Bold.woff2') format('woff2'),
+        url('InputMonoCompressed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed ExLight';
+    src: url('InputMonoCompressed-ExtraLight.woff2') format('woff2'),
+        url('InputMonoCompressed-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Italic.woff2') format('woff2'),
+        url('InputMonoCompressed-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed ExLight';
+    src: url('InputMonoCompressed-ExtraLightItalic.woff2') format('woff2'),
+        url('InputMonoCompressed-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-Light.woff2') format('woff2'),
+        url('InputMonoCompressed-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCompressed';
+    src: url('InputMonoCompressed-LightItalic.woff2') format('woff2'),
+        url('InputMonoCompressed-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCondensed';
+    src: url('InputMonoCondensed-Medium.woff2') format('woff2'),
+        url('InputMonoCondensed-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'InputMonoCondensed';
+    src: url('InputMonoCondensed-MediumItalic.woff2') format('woff2'),
+        url('InputMonoCondensed-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+

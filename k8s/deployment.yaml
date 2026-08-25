@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infrara-backend
+  namespace: infrara-prod
+  labels:
+    app: infrara-backend
+    version: v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: infrara-backend
+  template:
+    metadata:
+      labels:
+        app: infrara-backend
+        version: v1
+    spec:
+      containers:
+      - name: backend
+        image: infrara-backend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        
+        # Environment from ConfigMap and Secrets
+        envFrom:
+        - configMapRef:
+            name: infrara-config
+        - secretRef:
+            name: infrara-secrets
+        
+        # Resource limits
+        resources:
+          requests:
+            cpu: 500m
+            memory: 512Mi
+          limits:
+            cpu: 2000m
+            memory: 2Gi
+        
+        # Health checks
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 2
+        
+        # Volume mounts
+        volumeMounts:
+        - name: terraform-cache
+          mountPath: /home/infrara/.terraform.d
+      
+      volumes:
+      - name: terraform-cache
+        emptyDir: {}
+      
+      # Security context
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: infrara-config
+  namespace: infrara-prod
+data:
+  LLM_MODE: "claude"
+  EXEC_MODE: "online"
+  CORS_ORIGINS: "https://app.infrara.com,https://infrara.com"
+  LOG_LEVEL: "INFO"
+  COST_TRACKING_ENABLED: "true"
+

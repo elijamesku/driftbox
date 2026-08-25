@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_MODE=${LLM_MODE:-claude}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - SUPABASE_AUTH_URL=${SUPABASE_AUTH_URL}
+      - SUPABASE_AUTH_KEY=${SUPABASE_AUTH_KEY}
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+      - JWT_SECRET=${JWT_SECRET}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3000}
+      - EXEC_MODE=${EXEC_MODE:-online}
+      - COST_TRACKING_ENABLED=${COST_TRACKING_ENABLED:-true}
+    volumes:
+      - ./app:/app/app
+      - terraform-cache:/home/infrara/.terraform.d
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  terraform-cache:
+

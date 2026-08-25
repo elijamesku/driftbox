@@ -1,0 +1,6 @@
+# Ignore Electron files from Vercel builds
+electron/
+*.exe
+*.dmg
+*.AppImage
+dist/

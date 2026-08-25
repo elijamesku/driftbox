@@ -1,0 +1,122 @@
+{
+  "appId": "com.driftbox.desktop",
+  "productName": "Driftbox",
+  "copyright": "Copyright © 2024 Driftbox Inc.",
+  "directories": {
+    "output": "dist",
+    "buildResources": "build"
+  },
+  "files": [
+    "app/**/*",
+    "components/**/*",
+    "contexts/**/*",
+    "hooks/**/*",
+    "lib/**/*",
+    "types/**/*",
+    "utils/**/*",
+    "workers/**/*",
+    "public/**/*",
+    "electron/**/*",
+    "package.json",
+    ".env.local",
+    "next.config.js",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "postcss.config.js",
+    ".browserslistrc",
+    "empty-module.js",
+    "!**/node_modules/@next/swc-darwin-*/**",
+    "!**/node_modules/@next/swc-linux-*/**",
+    "!**/node_modules/@next/swc-win32-arm64*/**",
+    "!**/node_modules/@next/swc-win32-ia32*/**",
+    "!**/node_modules/fsevents/**",
+    "!**/node_modules/**/*.map",
+    "!**/node_modules/**/*.md",
+    "!**/node_modules/**/LICENSE*",
+    "!**/node_modules/**/CHANGELOG*",
+    "!**/node_modules/**/.github/**",
+    "!**/node_modules/**/test/**",
+    "!**/node_modules/**/tests/**",
+    "!**/node_modules/**/__tests__/**"
+  ],
+  "asar": true,
+  "asarUnpack": [],
+  "npmRebuild": false,
+  "buildDependenciesFromSource": false,
+  "extraResources": [
+    { "from": "out", "to": "out" }
+  ],
+  "mac": {
+    "category": "public.app-category.developer-tools",
+    "icon": "build/icon.png",
+    "target": [
+      {
+        "target": "dmg",
+        "arch": ["x64", "arm64"]
+      }
+    ],
+    "hardenedRuntime": false,
+    "gatekeeperAssess": false,
+    "protocols": [
+      {
+        "name": "Driftbox OAuth",
+        "schemes": ["driftbox"]
+      }
+    ]
+  },
+  "dmg": {
+    "format": "UDZO",
+    "contents": [
+      {
+        "x": 130,
+        "y": 220
+      },
+      {
+        "x": 410,
+        "y": 220,
+        "type": "link",
+        "path": "/Applications"
+      }
+    ],
+    "window": {
+      "width": 540,
+      "height": 400
+    }
+  },
+  "win": {
+    "target": [
+      {
+        "target": "portable",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "build/icon.png",
+    "verifyUpdateCodeSignature": false,
+    "protocols": [
+      {
+        "name": "Driftbox OAuth",
+        "schemes": ["driftbox"]
+      }
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Driftbox",
+    "installerIcon": "build/icon.png",
+    "uninstallerIcon": "build/icon.png",
+    "license": "LICENSE.txt"
+  },
+  "linux": {
+    "target": ["AppImage", "deb", "rpm"],
+    "icon": "build/icon.png",
+    "category": "Development",
+    "maintainer": "support@driftbox.com"
+  },
+  "publish": null
+}
+

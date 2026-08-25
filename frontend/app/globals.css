@@ -1,0 +1,450 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Input Mono Condensed & Narrow - all weights from public/fonts/InputMono-2/ */
+@import url('/fonts/InputMono-2/stylesheet.css');
+
+/* Font display optimization - prevent render blocking */
+@font-face {
+  font-family: 'Cascadia Code';
+  font-display: swap;
+  src: url('/fonts/CascadiaCode.woff2') format('woff2');
+}
+
+/* Helvetica Neue - from public/fonts/HelveticaNeue/ */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue/HelveticaNeue-Roman.woff2') format('woff2'),
+       url('/fonts/HelveticaNeue/HelveticaNeue-Roman.woff') format('woff');
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue/HelveticaNeue-Medium.woff2') format('woff2'),
+       url('/fonts/HelveticaNeue/HelveticaNeue-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/HelveticaNeue/HelveticaNeue-Bold.woff2') format('woff2'),
+       url('/fonts/HelveticaNeue/HelveticaNeue-Bold.woff') format('woff');
+}
+
+/* Input Mono - from public/fonts/InputMono-1/ (standard width) */
+@font-face {
+  font-family: 'Input Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/InputMono-1/InputMono-Regular.woff2') format('woff2'),
+       url('/fonts/InputMono-1/InputMono-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Input Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/InputMono-1/InputMono-Medium.woff2') format('woff2'),
+       url('/fonts/InputMono-1/InputMono-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Input Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/InputMono-1/InputMono-Bold.woff2') format('woff2'),
+       url('/fonts/InputMono-1/InputMono-Bold.woff') format('woff');
+}
+
+@layer base {
+  /* Scanner.dev inspired color scheme - Dark with Teal accents */
+  :root {
+    /* Font stacks - loaded via @font-face above */
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-mono: 'Input Mono', 'Cascadia Code', Consolas, 'Courier New', monospace;
+    /* Backgrounds - Deep blacks */
+    --background: 0 0% 4%;           /* #0a0a0a */
+    --foreground: 0 0% 98%;          /* #fafafa */
+
+    --card: 0 0% 6%;                 /* #0f0f0f */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;              /* #141414 */
+    --popover-foreground: 0 0% 98%;
+
+    /* Teal accent (Scanner.dev signature) */
+    --primary: 168 76% 40%;          /* #14b8a6 teal */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 10%;           /* #1a1a1a */
+    --secondary-foreground: 0 0% 63%; /* #a1a1a1 */
+
+    --muted: 0 0% 10%;               /* #1a1a1a */
+    --muted-foreground: 0 0% 40%;    /* #666666 */
+
+    --accent: 168 76% 40%;           /* Teal */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;        /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders - Very subtle */
+    --border: 0 0% 12%;              /* #1f1f1f */
+    --input: 0 0% 15%;               /* #262626 */
+    --ring: 168 76% 40%;             /* Teal ring */
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific */
+    --sidebar-background: 0 0% 5%;   /* #0d0d0d */
+    --sidebar-foreground: 0 0% 63%; /* #a1a1a1 */
+    --sidebar-primary: 168 76% 40%; /* Teal */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;     /* Hover bg */
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 12%;     /* Subtle border */
+    --sidebar-ring: 168 76% 40%;
+
+    /* Status colors */
+    --success: 142 71% 45%;          /* Green */
+    --warning: 48 96% 53%;           /* Yellow */
+    --error: 0 84% 60%;              /* Red */
+    --info: 217 91% 60%;             /* Blue */
+  }
+
+  /* No separate dark mode needed - already dark by default */
+  .dark {
+    /* Same as root - Scanner.dev is dark-only */
+  }
+  
+  /* Light Mode - Mate Security style */
+  .light-mode {
+    --background: 0 0% 100%;           /* #ffffff */
+    --foreground: 0 0% 9%;             /* #171717 */
+
+    --card: 0 0% 98%;                  /* #fafafa */
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;              /* #ffffff */
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 168 76% 40%;            /* #14b8a6 teal */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;             /* #f5f5f5 */
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;                 /* #f5f5f5 */
+    --muted-foreground: 0 0% 45%;      /* #737373 */
+
+    --accent: 168 76% 40%;             /* Teal */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;          /* Red */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders - Light gray */
+    --border: 0 0% 90%;                /* #e5e5e5 */
+    --input: 0 0% 90%;
+    --ring: 168 76% 40%;
+
+    /* Sidebar specific */
+    --sidebar-background: 0 0% 100%;   /* #ffffff */
+    --sidebar-foreground: 0 0% 45%;    /* #737373 */
+    --sidebar-primary: 168 76% 40%;    /* Teal */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;        /* Hover bg */
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;        /* Light border */
+    --sidebar-ring: 168 76% 40%;
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+
+  /* IDE and inputs: Input Mono */
+  input,
+  textarea,
+  select,
+  pre,
+  code,
+  [contenteditable='true'] {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom text selection color */
+  ::selection {
+    background-color: #3b3b3b;
+    color: #ffffff;
+  }
+  
+  ::-moz-selection {
+    background-color: #3b3b3b;
+    color: #ffffff;
+  }
+}
+
+/* Hide scrollbar completely on tabs and all horizontal scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* Also ensure scrolling still works */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ========================================
+   LIGHT MODE OVERRIDES - Mate Security Style
+   Background: Light gray (#f5f5f5)
+   Cards: White (#ffffff) for visual depth
+   ======================================== */
+
+/* Light mode body and backgrounds - GRAY background like Mate */
+.light-mode body,
+.light-mode {
+  background-color: #f3f4f6 !important;  /* Light gray background */
+  color: #171717 !important;
+}
+
+/* Light mode main content area */
+.light-mode .min-h-screen.bg-\[\#0a0a0a\] {
+  background-color: #f3f4f6 !important;  /* Gray background */
+}
+
+/* Light mode sidebar - stays white */
+.light-mode aside {
+  background-color: #ffffff !important;
+  border-color: #e5e5e5 !important;
+}
+
+/* Light mode cards and panels - WHITE to stand out against gray bg */
+.light-mode .bg-\[\#0f0f0f\] {
+  background-color: #ffffff !important;  /* White cards */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;  /* Subtle shadow */
+}
+
+/* Nested elements inside cards - slightly off-white */
+.light-mode .bg-\[\#0a0a0a\] {
+  background-color: #f9fafb !important;  /* Very light gray for nested elements */
+}
+
+.light-mode .bg-\[\#0d0d0d\] {
+  background-color: #ffffff !important;
+}
+
+.light-mode .bg-\[\#141414\],
+.light-mode .bg-\[\#1a1a1a\] {
+  background-color: #f3f4f6 !important;  /* Match background for muted areas */
+}
+
+/* Progress bars background */
+.light-mode .bg-\[\#1f1f1f\] {
+  background-color: #e5e7eb !important;  /* Light gray for progress bar backgrounds */
+}
+
+/* Light mode text colors */
+.light-mode .text-\[\#fafafa\],
+.light-mode .text-white {
+  color: #111827 !important;  /* Near black text */
+}
+
+.light-mode .text-\[\#a1a1a1\] {
+  color: #4b5563 !important;  /* Medium gray */
+}
+
+.light-mode .text-\[\#666666\] {
+  color: #6b7280 !important;  /* Slightly lighter gray */
+}
+
+/* Light mode borders */
+.light-mode .border-\[\#1f1f1f\],
+.light-mode .border-\[\#262626\],
+.light-mode .border-\[\#333333\] {
+  border-color: #e5e7eb !important;
+}
+
+/* Light mode inputs */
+.light-mode input,
+.light-mode textarea,
+.light-mode select {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #111827 !important;
+}
+
+/* Light mode buttons */
+.light-mode .hover\:bg-\[\#141414\]:hover,
+.light-mode .hover\:bg-\[\#1a1a1a\]:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* Light mode hover states for nested elements */
+.light-mode .hover\:border-\[\#2f2f2f\]:hover {
+  border-color: #d1d5db !important;
+}
+
+.light-mode .hover\:border-\[\#14b8a6\]:hover {
+  border-color: #14b8a6 !important;
+}
+
+/* Keep accent colors the same */
+.light-mode .bg-\[\#14b8a6\] {
+  background-color: #14b8a6 !important;
+}
+
+.light-mode .text-\[\#14b8a6\] {
+  color: #0d9488 !important;  /* Slightly darker teal for readability */
+}
+
+/* Status colors - slightly darker for light mode readability */
+.light-mode .text-\[\#22c55e\] {
+  color: #16a34a !important;
+}
+
+.light-mode .text-\[\#ef4444\] {
+  color: #dc2626 !important;
+}
+
+.light-mode .text-\[\#eab308\] {
+  color: #ca8a04 !important;
+}
+
+.light-mode .text-\[\#f97316\] {
+  color: #ea580c !important;
+}
+
+/* Status backgrounds - lighter versions */
+.light-mode .bg-\[\#22c55e\]\/10 {
+  background-color: rgba(22, 163, 74, 0.1) !important;
+}
+
+.light-mode .bg-\[\#ef4444\]\/10 {
+  background-color: rgba(220, 38, 38, 0.1) !important;
+}
+
+.light-mode .bg-\[\#eab308\]\/10 {
+  background-color: rgba(202, 138, 4, 0.1) !important;
+}
+
+/* DigitalOcean blue in light mode */
+.light-mode .text-\[\#0080FF\] {
+  color: #0066cc !important;
+}
+
+.light-mode .bg-\[\#0080FF\]\/10 {
+  background-color: rgba(0, 102, 204, 0.1) !important;
+}
+
+/* Light mode scrollbar (if shown) */
+.light-mode ::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+}
+
+/* Light mode selection */
+.light-mode ::selection {
+  background-color: #14b8a6;
+  color: #ffffff;
+}
+
+/* Charts tooltip in light mode */
+.light-mode .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Dividers in light mode */
+.light-mode .divide-\[\#1f1f1f\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e5e7eb !important;
+}
+
+/* Animated Rainbow Border */
+@keyframes rainbow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shimmer animation for PR button */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.rainbow-border-wrapper {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #8844cc 0%,
+    #a855f7 25%,
+    #d946ef 50%,
+    #ec4899 75%,
+    #8844cc 100%
+  );
+  background-size: 200% 100%;
+  animation: rainbow-border 3s ease-in-out infinite;
+  border-radius: 10px;
+}
+
+/* Fade to outline only after first message */
+.rainbow-border-wrapper.outline-only {
+  background: transparent;
+  animation: none;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1a1a1a, #1a1a1a), 
+                    linear-gradient(
+                      90deg,
+                      #8844cc 0%,
+                      #a855f7 25%,
+                      #d946ef 50%,
+                      #ec4899 75%,
+                      #8844cc 100%
+                    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 100%, 200% 100%;
+  animation: rainbow-border 3s ease-in-out infinite;
+  transition: all 0.8s ease-out;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
