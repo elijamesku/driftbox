@@ -26,7 +26,6 @@ ENV/
 env/
 
 # IDE
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -55,8 +54,6 @@ logs/
 app/logs/
 
 # Environment (keep .env.example)
-.env
-.env.local
 .env.*.local
 !.env.example
 
@@ -78,8 +75,19 @@ frontend/dist/
 *.exe
 *.AppImage
 
+# Runtime data
+data/
+*.db
+
+# Claude Code
+.claude/
+
 # Temporary files
 *.tmp
 *.temp
 tmp/
 temp/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
