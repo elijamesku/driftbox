@@ -162,34 +162,34 @@ Starts the backend on port 8000. Run the frontend separately or add it to the co
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                        FRONTEND                               │
-│                                                               │
+│                        FRONTEND                              │
+│                                                              │
 │  Next.js 14 ─── Monaco Editor ─── Tailwind CSS               │
-│       │              │                                        │
-│  IDELayout      MonacoEditor.tsx                              │
+│       │              │                                       │
+│  IDELayout      MonacoEditor.tsx                             │
 │  ├─ Sidebar       ├─ HCL syntax highlighting                 │
-│  ├─ EditorPane    ├─ Remote cursor decorations                │
+│  ├─ EditorPane    ├─ Remote cursor decorations               │
 │  ├─ ChatPanel     ├─ Inline diff (accept/reject)             │
-│  ├─ Terminal      └─ Content widget name labels               │
-│  ├─ StagingPanel                                              │
-│  ├─ TeamPresence   useTeamCollaboration.ts                    │
-│  └─ DependencyGraph  ├─ WebSocket connection management       │
-│                       ├─ 25 message type handlers             │
-│                       ├─ Reconnect with backoff               │
-│                       └─ Local file sync (Electron)           │
-│                                                               │
-│  Electron (Desktop)                                           │
-│  ├─ electronAPI.writeFile / deleteFile                        │
+│  ├─ Terminal      └─ Content widget name labels              │
+│  ├─ StagingPanel                                             │
+│  ├─ TeamPresence   useTeamCollaboration.ts                   │
+│  └─ DependencyGraph  ├─ WebSocket connection management      │
+│                       ├─ 25 message type handlers            │
+│                       ├─ Reconnect with backoff              │
+│                       └─ Local file sync (Electron)          │
+│                                                              │
+│  Electron (Desktop)                                          │
+│  ├─ electronAPI.writeFile / deleteFile                       │
 │  └─ Cross-machine file sync                                  │
 └───────────────────────────┬──────────────────────────────────┘
                             │
               WebSocket + REST API
                             │
 ┌───────────────────────────┴──────────────────────────────────┐
-│                        BACKEND                                │
-│                                                               │
-│  FastAPI + Uvicorn (async)                                    │
-│                                                               │
+│                        BACKEND                               │
+│                                                              │
+│  FastAPI + Uvicorn (async)                                   │
+│                                                              │
 │  ┌─────────────────────┐  ┌──────────────────────────────┐   │
 │  │ TeamCollaboration   │  │ Terraform Engine             │   │
 │  │ Manager             │  │                              │   │
@@ -203,13 +203,13 @@ Starts the backend on port 8000. Run the frontend separately or add it to the co
 │  │ ├─ resource_deps    │  │ ├─ fmt → init → validate     │   │
 │  │ └─ broadcast_*()    │  │ └─ plan summary + details    │   │
 │  └─────────────────────┘  └──────────────────────────────┘   │
-│                                                               │
+│                                                              │
 │  ┌─────────────────────┐  ┌──────────────────────────────┐   │
 │  │ RAG Pipeline        │  │ Services                     │   │
 │  │ ├─ Registry crawl   │  │ ├─ team_service (RBAC)       │   │
 │  │ ├─ FAISS index      │  │ ├─ email_service (SendGrid)  │   │
 │  │ ├─ Voyage embedding │  │ ├─ usage_tracker             │   │
-│  │ └─ NL → HCL gen    │  │ ├─ achievements              │   │
+│  │ └─ NL → HCL gen     │  │ ├─ achievements              │   │
 │  └─────────────────────┘  │ └─ billing (Stripe)          │   │
 │                           └──────────────────────────────┘   │
 └───────────────────────────┬──────────────────────────────────┘
